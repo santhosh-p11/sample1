@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: my-app
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: "./deployments"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: my-git-repo
+  images:
+  - name: santhoshshelby/mycustomrepo
+    newName: santhoshshelby/mycustomrepo
+    newTag: auto
