@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: my-app
+  namespace: flux-system
+spec:
+  image: santhoshshelby/mycustomrepo
+  interval: 1m
